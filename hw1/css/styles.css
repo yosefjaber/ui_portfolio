@@ -1,4 +1,14 @@
 body {
-    color: green;
+    color: white;
     background-color: black;
+}
+
+#time_div {
+    display:flex; 
+    align-items:center; 
+    gap:18px;
+}
+
+#today_survey_btn {
+    margin-top: 18px;
 }

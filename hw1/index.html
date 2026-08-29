@@ -4,33 +4,47 @@
   <head>
     <meta charset="UTF-8"/>
     <title>Journaling Page</title>
+    <script src="logic.js" defer></script>
   </head>
   <body>
     <h1>Yosef Jaber's Journaling Page</h1>
-    <p>Time and Date</p>
+
+    <div id="time_div">
+      <p id="time_text">Time and Date placeholder</p>
+      <button id="time_btn">Update Time</button>
+    </div>
+
     <img src=pic_of_the_day.png/>
-    <p>"Type shi"</p>
+    <p>"la peace"</p>
     <div>
         <label for="notes">Notes:</label>
         <input type="text" id="notes" name=""notes>
     </div>
-    <div>
-        <label for="sleep">Hours of sleep:</label>
-        <input type="text" id="sleep" name="sleep">
-    </div>
     <br>
-    <h2>How are you feeling today???</h2>
-    <label for="energetic"> energetic</label>
-    <input type="checkbox" id="energetic"><br>
+    <div>
+      <h2>How are you feeling today???</h2>
+      <label for="energetic"> energetic</label>
+      <input type="checkbox" id="energetic"><br>
 
-    <label for="anxious"> anxious</label>
-    <input type="checkbox" id="anxious"><br>
+      <label for="anxious"> anxious</label>
+      <input type="checkbox" id="anxious"><br>
 
-    <label for="motivated"> motivated</label>
-    <input type="checkbox" id="motivated"><br>
+      <label for="motivated"> motivated</label>
+      <input type="checkbox" id="motivated"><br>
 
-    <label for="happy"> happy</label>
-    <input type="checkbox" id="happy"><br>
+      <label for="happy"> happy</label>
+      <input type="checkbox" id="happy"><br>
+
+      <label for="depressed"> depressed</label>
+      <input type="checkbox" id="depressed"><br>
+
+      <div>
+          <label for="sleep">Hours of sleep:</label>
+          <input type="text" id="sleep" name="sleep">
+      </div>
+      <button id="today_survey_btn">Submit Today Survey</button>
+
+    </div>
 
   </body>
 </html>
