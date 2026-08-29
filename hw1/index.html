@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <link rel="stylesheet" href="css/styles.css">
   <head>
+    <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8"/>
     <title>Journaling Page</title>
     <script src="logic.js" defer></script>
@@ -9,26 +9,26 @@
   <body>
     <h1 id="title">Yosef Jaber's Journaling Page</h1>
 
-    <div class="center padding">
+    <div class="center">
       <div id="time_div">
         <p id="time_text">Time and Date placeholder</p>
         <button id="time_btn">Update Time</button>
       </div>
 
       <img src=la_peace.jpg/>
-      <p>"that's la peace" - Aristotle</p>
+      <p id="quote">"that's la peace" - Aristotle</p>
       <div>
           <label for="notes">Notes:</label><br>
           <textarea rows="4" cols="50">Your notes here</textarea>
       </div>
     </div>
 
-    <div id = "usr_stats" class="center padding">
+    <div id = "usr_stats" class="center">
       <h2>User Statistics:</h2>
       <div id="usr_stat_text">
-        <h3 id="hours_slept">Hours Slept: </h3>
-        <h3 id="day_count">Total Days Logged: </h3>
-        <h3 id="avg_hours_slept">Hours Slept on average: </h3>
+        <h3 id="hours_slept" class="sleep_text">Hours Slept: </h3>
+        <h3 id="day_count" class="sleep_text">Total Days Logged: </h3>
+        <h3 id="avg_hours_slept" class="sleep_text">Hours Slept on average: </h3>
         <h3 id="days_energetic">Days energetic: </h3>
         <h3 id="days_anxious">Days anxious: </h3>
         <h3 id="days_motivated">Days motivated: </h3>

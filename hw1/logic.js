@@ -78,7 +78,7 @@ function recalculate_user_html(){
 
     document.getElementById("hours_slept").innerHTML = `Hours Slept: ${totals.hours_slept}`
     document.getElementById("day_count").innerHTML = `Days Logged: ${user_data.length}`
-    document.getElementById("avg_hours_slept").innerHTML = `Hours Slept: ${totals.hours_slept/user_data.length}`
+    document.getElementById("avg_hours_slept").innerHTML = `Hours Slept on average: ${totals.hours_slept/user_data.length}`
     console.log(totals.hours_slept)
     for (let mood of moods) {
         document.getElementById(`days_${mood}`).innerHTML = `Days ${mood}: ${totals[mood]}`
