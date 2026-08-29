@@ -12,3 +12,20 @@ body {
 #today_survey_btn {
     margin-top: 18px;
 }
+
+#title {
+    margin: 2%;
+}
+
+#usr_stat_text {
+    margin-left: 4%;
+}
+
+#usr_stats {
+    margin-top: 3%;
+}
+
+.center {
+    max-width: 700px;
+    margin: 0 auto;
+}
