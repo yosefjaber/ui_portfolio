@@ -1,3 +1,7 @@
+window.onload = function() {
+  recalculate_user_html();
+};
+
 let time_text = document.getElementById("time_text");
 time_text.innerHTML = Date();
 
@@ -23,7 +27,7 @@ let example_user_data_3 = {
     hours_slept: 8,
     energetic: false,
     anxious: false,
-    motivated: false,
+    motivated: true,
     happy: true,
     depressed: false
 }
