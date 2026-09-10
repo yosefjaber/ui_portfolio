@@ -1,10 +1,7 @@
 <script>
-  export let steps;
 
-  function takeStep() {
-    steps += 1
-    console.log(steps)
-  }
+  export let takeStep;
+
 </script>
 
 <main>

@@ -1,8 +1,14 @@
 <script>
-  let steps = $state(0)
 
   import UI from './lib/UI.svelte'
   import Test from './lib/Test.svelte'
+
+  let steps = $state(0)
+
+  function takeStep(){
+    steps += 1
+  }
+
 </script>
 
 <div class="app-container">
@@ -10,7 +16,7 @@
     <UI {steps}/>
   </div>
   <div class="test-region">
-    <Test {steps}/>
+    <Test {takeStep}/>
   </div>
 </div>
 
