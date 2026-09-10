@@ -5,11 +5,13 @@
 </script>
 
 <main>
-    <button onclick={takeStep}>
+    <button class="button" onclick={takeStep}>
         Take a step
     </button>
 </main>
 
 <style>
-
+    .button {
+        margin: .5rem
+    }
 </style>

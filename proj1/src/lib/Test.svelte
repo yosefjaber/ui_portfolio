@@ -1,5 +1,5 @@
 <script>
-  import Steps from './TakeStep.svelte'
+  import Steps from './test/TakeStep.svelte'
 
   export let takeStep
 </script>

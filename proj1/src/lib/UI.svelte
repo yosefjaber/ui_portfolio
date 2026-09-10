@@ -1,5 +1,5 @@
 <script>
-  import StepCounter from "./StepCounter.svelte";
+  import StepCounter from "./ui/StepCounter.svelte";
 
   export let steps
 </script>
