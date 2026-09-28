@@ -9,7 +9,31 @@
 
 <main>
     <h2>Size Control</h2>
-    <div id = "firstRow">
+    <div class = "row">
+        <div class = "controlPanel">
+            <h3>Waist</h3>
+            <div class = "controlInputs">
+
+                <button onclick={() => waistSize++}>+</button>
+                <p class="inputText">{waistSize}"</p>
+                <button onclick={() => waistSize--}>-</button>
+            
+            </div>
+        </div>
+
+        <div class = "controlPanel">
+            <h3>Upper Leg</h3>
+            <div class = "controlInputs">
+
+                <button onclick={() => upperLeg++}>+</button>
+                <p class="inputText">{upperLeg}"</p>
+                <button onclick={() => upperLeg--}>-</button>
+            
+            </div>
+        </div>
+    </div>
+
+    <div class = "row">
         <div class = "controlPanel">
             <h3>Waist</h3>
             <div class = "controlInputs">
@@ -42,7 +66,7 @@
     flex-direction: row;
   }
 
-  #firstRow {
+  .row {
     display:flex
   }
 
