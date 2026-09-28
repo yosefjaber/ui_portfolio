@@ -1,10 +1,8 @@
 <script>
+
     let waistSize = $state(32)
     let upperLeg = $state(12)
 
-    function updateVal(val, change) {
-        val = val + change
-    }
 </script>
 
 <main>
@@ -13,10 +11,10 @@
         <div class = "controlPanel">
             <h3>Waist</h3>
             <div class = "controlInputs">
-
+            
                 <button onclick={() => waistSize++}>+</button>
                 <p class="inputText">{waistSize}"</p>
-                <button onclick={() => waistSize--}>-</button>
+                <button onclick={() => {if(waistSize>0) waistSize--}}>-</button>
             
             </div>
         </div>
@@ -24,10 +22,10 @@
         <div class = "controlPanel">
             <h3>Upper Leg</h3>
             <div class = "controlInputs">
-
+            
                 <button onclick={() => upperLeg++}>+</button>
                 <p class="inputText">{upperLeg}"</p>
-                <button onclick={() => upperLeg--}>-</button>
+                <button onclick={() => {if(upperLeg>0) upperLeg--}}>-</button>
             
             </div>
         </div>
