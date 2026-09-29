@@ -120,8 +120,16 @@
         background-color: white;
     }
 
+    button:hover {
+        background: #A9A9A9;
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
     button.active {
-        background-color: #a9a9a9;
+        background-color: #808080;
     }
 
     input {
