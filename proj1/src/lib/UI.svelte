@@ -3,15 +3,19 @@
   import Color from "./ui/Color.svelte"
   import Size from "./ui/Size.svelte"
 
-  export let steps
+  export let pants
 </script>
 
 <main>
-  <StepCounter {steps}/>
-  <Color/>
-  <Size/>
+  <StepCounter steps={pants.steps}/>
+  <div class="customization">
+    <Color pants={pants} />
+    <Size pants={pants} />
+  </div>
 </main>
 
 <style> 
-
+  .customization {
+    display: flex;
+  }
 </style>

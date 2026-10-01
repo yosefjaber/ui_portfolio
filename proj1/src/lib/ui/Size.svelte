@@ -1,114 +1,84 @@
 <script>
+  import Slider from "./Slider.svelte"
 
-    let waistSize = $state(32)
-    let upperLeg = $state(12)
-    let lowerLeg = $state(10)
-    let ankle = $state(6)
+  let { pants = $bindable() } = $props()
 
+  const waistMin = 26
+  const waistMax = 46
+
+  const upperLegLengthMin = 12
+  const upperLegLengthMax = 20
+
+  const upperLegWidthMin = 9
+  const upperLegWidthMax = 16
+
+  const lowerLegLengthMin = 12
+  const lowerLegLengthMax = 20
+
+  const lowerLegWidthMin = 6
+  const lowerLegWidthMax = 12
+
+  const ankleMin = 5
+  const ankleMax = 11
 </script>
 
 <main>
     <h2>Size Control</h2>
-
-    <div class = "row">
+    <div id="sliders">
+      <div id="leftSide">
         <div class = "controlPanel">
-            <h3>Waist</h3>
-            <div class = "controlInputs">
-            
-                <button onclick={() => waistSize++}>+</button>
-                <p class="inputText">{waistSize}"</p>
-                <button onclick={() => {if(waistSize>0) waistSize--}}>-</button>
-            
-            </div>
+            <Slider max={46} min={26} bindVal={pants.waist} step={2} label={"waist"}/>
         </div>
 
         <div class = "controlPanel">
-            <h3>Upper Leg</h3>
-            <div class = "controlInputs">
-            
-                <button onclick={() => upperLeg++}>+</button>
-                <p class="inputText">{upperLeg}"</p>
-                <button onclick={() => {if(upperLeg>0) upperLeg--}}>-</button>
-            
-            </div>
+            <Slider max={20} min={12} bindVal={pants.upperLegLength} step={2} label={"waist"}/>
         </div>
-    </div>
 
-    <div class = "row">
-      <div class = "controlPanel">
-          <h3>Lower Leg</h3>
-          <div class = "controlInputs">
-          
-              <button onclick={() => lowerLeg++}>+</button>
-              <p class="inputText">{lowerLeg}"</p>
-              <button onclick={() => {if(lowerLeg>0) lowerLeg--}}>-</button>
-          
-          </div>
+        <div class = "controlPanel">
+            <Slider max={46} min={26} bindVal={pants.waist} step={2} label={"waist"}/>
+        </div>
       </div>
 
-      <div class = "controlPanel">
-          <h3>Ankle</h3>
-          <div class = "controlInputs">
-          
-              <button onclick={() => ankle++}>+</button>
-              <p class="inputText">{ankle}"</p>
-              <button onclick={() => {if(ankle>0) ankle--}}>-</button>
-          
-          </div>
+      <div id="rightSide">
+        <div class = "controlPanel">
+            <Slider max={46} min={26} bindVal={pants.waist} step={2} label={"waist"}/>
+        </div>
+
+        <div class = "controlPanel">
+            <Slider max={46} min={26} bindVal={pants.waist} step={2} label={"waist"}/>
+        </div>
+
+        <div class = "controlPanel">
+            <Slider max={46} min={26} bindVal={pants.waist} step={2} label={"waist"}/>
+        </div>
       </div>
+
     </div>
 
 </main>
 
 <style> 
-  .controlInputs {
-    display:flex;
-    align-items: center;
-    flex-direction: row;
+  #sliders {
+    display: flex;
   }
 
-  .row {
-    display:flex
+  #leftSide {
+    margin-right: 1rem;
+  }
+
+  #rightSide {
+    margin-left: 1rem;
+  }
+
+  main {
+    margin-left: 3rem;
   }
 
   .controlPanel {
-    padding: 2rem;  
+    padding: 0.5rem;  
   }
 
   main {
     color: white
-  }
-
-  h3 {
-    padding-bottom: .5rem;
-  }
-
-  button {
-    padding: .5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 1.4rem;
-    font-weight: 600;
-    line-height: 1;
-  }
-
-  button:hover {
-    background: #A9A9A9;
-  }
-
-  button:active {
-    transform: scale(0.9);
-  }
-
-  .inputText {
-    margin: 1rem;
-    display: inline-block;
-    width: 2.5rem;
-    text-align: center;
   }
 </style>

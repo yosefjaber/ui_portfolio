@@ -1,6 +1,6 @@
 <script>
 
-  export let takeStep;
+  let { takeStep } = $props()
 
 </script>
 

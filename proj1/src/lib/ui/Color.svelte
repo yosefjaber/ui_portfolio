@@ -1,17 +1,10 @@
 <script>
-    let primaryColor = $state("blue")
-    let secondaryColor = $state("red")
+    let {pants} = $props()
 
-    let style = $state("half")
+    let fill = $derived(pants.style === "primary" ? pants.primaryColor : `url(#${pants.style})`)
 
-    let fill = $derived(style === "primary" ? primaryColor : `url(#${style})`)
-
-    let activeColor = "grey"
-
-    let nonactiveColor = "white"
-
-    function changeStyle(newStyle){
-        style = newStyle
+    function changeStyle(newStyle) {
+        pants.style = newStyle
     }
 
 </script>
@@ -21,23 +14,23 @@
         <h2>Color</h2>
 
         <div class="styleSelector">
-            <button class:active={style==="half"} onclick={() => changeStyle("half")}>
+            <button class:active={pants.style==="half"} onclick={() => changeStyle("half")}>
                 Half
             </button>
 
-            <button class:active={style==="camo"} onclick={() => changeStyle("camo")}>
+            <button class:active={pants.style==="camo"} onclick={() => changeStyle("camo")}>
                 Camo
             </button>
 
-            <button class:active={style==="gradient"} onclick={() => changeStyle("gradient")}>
+            <button class:active={pants.style==="gradient"} onclick={() => changeStyle("gradient")}>
                 Gradient
             </button>
 
-            <button class:active={style==="stripes"} onclick={() => changeStyle("stripes")}>
+            <button class:active={pants.style==="stripes"} onclick={() => changeStyle("stripes")}>
                 Stripes
             </button>
 
-            <button class:active={style==="primary"} onclick={() => changeStyle("primary")}>
+            <button class:active={pants.style==="primary"} onclick={() => changeStyle("primary")}>
                 Primary
             </button>
         </div>
@@ -45,12 +38,12 @@
 
         <div class="colorInput">
             <p class="colorText">Primary Color: </p>
-            <input type="color" bind:value={primaryColor} />
+            <input type="color" bind:value={pants.primaryColor} />
         </div>
 
         <div class="colorInput">
             <p class="colorText">Secondary Color: </p>
-            <input type="color" bind:value={secondaryColor} />
+            <input type="color" bind:value={pants.secondaryColor} />
         </div>
 
     </div>
@@ -60,24 +53,24 @@
 
             <defs>
                 <linearGradient id="half">
-                    <stop offset="50%" stop-color="{primaryColor}" />
-                    <stop offset="50%" stop-color="{secondaryColor}" />
+                    <stop offset="50%" stop-color="{pants.primaryColor}" />
+                    <stop offset="50%" stop-color="{pants.secondaryColor}" />
                 </linearGradient>
 
                 <pattern id="camo" width="150" height="150" patternUnits="userSpaceOnUse">
-                    <rect width="150" height="150" fill="{primaryColor}" />
-                    <ellipse cx="40" cy="40" rx="30" ry="20" fill="{secondaryColor}" />
-                    <ellipse cx="110" cy="100" rx="35" ry="25" fill="{secondaryColor}" />
+                    <rect width="150" height="150" fill="{pants.primaryColor}" />
+                    <ellipse cx="40" cy="40" rx="30" ry="20" fill="{pants.secondaryColor}" />
+                    <ellipse cx="110" cy="100" rx="35" ry="25" fill="{pants.secondaryColor}" />
                 </pattern>
 
                 <linearGradient id="gradient">
-                    <stop offset="0%" stop-color="{primaryColor}" />
-                    <stop offset="100%" stop-color="{secondaryColor}" />
+                    <stop offset="0%" stop-color="{pants.primaryColor}" />
+                    <stop offset="100%" stop-color="{pants.secondaryColor}" />
                 </linearGradient>
 
                 <pattern id="stripes" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <rect width="30" height="60" fill="{secondaryColor}" />
-                    <rect x="30" width="30" height="60" fill="{primaryColor}" />
+                    <rect width="30" height="60" fill="{pants.secondaryColor}" />
+                    <rect x="30" width="30" height="60" fill="{pants.primaryColor}" />
                 </pattern>
             </defs>
 
