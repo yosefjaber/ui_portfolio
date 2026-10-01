@@ -11,9 +11,9 @@
     secondaryColor: "white",
     waist: 32,
     upperLegWidth: 12,
-    upperLegHeight: 20,
+    upperLegLength: 20,
     lowerLegWidth: 8,
-    lowerlegHeight: 20,
+    lowerlegLength: 20,
     ankle: 5,
     steps: 0,
   })
