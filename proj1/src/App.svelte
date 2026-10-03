@@ -13,7 +13,7 @@
     upperLegWidth: 12,
     upperLegLength: 20,
     lowerLegWidth: 8,
-    lowerlegLength: 20,
+    lowerLegLength: 20,
     ankle: 5,
     steps: 0,
   })

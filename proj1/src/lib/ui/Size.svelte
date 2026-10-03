@@ -27,29 +27,29 @@
     <div id="sliders">
       <div id="leftSide">
         <div class = "controlPanel">
-            <Slider max={waistMax} min={waistMin} bindVal={pants.waist} step={2} label={"Waist"}/>
+            <Slider max={waistMax} min={waistMin} bind:bindVal={pants.waist} step={2} label={"Waist"}/>
         </div>
 
         <div class = "controlPanel">
-            <Slider max={upperLegLengthMax} min={upperLegLengthMin} bindVal={pants.upperLegLength} step={2} label={"Upper Leg Length"}/>
+            <Slider max={upperLegLengthMax} min={upperLegLengthMin} bind:bindVal={pants.upperLegLength} step={2} label={"Upper Leg Length"}/>
         </div>
 
         <div class = "controlPanel">
-            <Slider max={upperLegWidthMax} min={upperLegWidthMin} bindVal={pants.upperLegWidth} step={2} label={"Upper Leg Width"}/>
+            <Slider max={upperLegWidthMax} min={upperLegWidthMin} bind:bindVal={pants.upperLegWidth} step={2} label={"Upper Leg Width"}/>
         </div>
       </div>
 
       <div id="rightSide">
         <div class = "controlPanel">
-            <Slider max={lowerLegLengthMax} min={lowerLegLengthMin} bindVal={pants.lowerlegLength} step={2} label={"Lower Leg Length"}/>
+            <Slider max={lowerLegLengthMax} min={lowerLegLengthMin} bind:bindVal={pants.lowerLegLength} step={2} label={"Lower Leg Length"}/>
         </div>
 
         <div class = "controlPanel">
-            <Slider max={lowerLegWidthMax} min={lowerLegWidthMin} bindVal={pants.lowerLegWidth} step={2} label={"Lower Leg Width"}/>
+            <Slider max={lowerLegWidthMax} min={lowerLegWidthMin} bind:bindVal={pants.lowerLegWidth} step={2} label={"Lower Leg Width"}/>
         </div>
 
         <div class = "controlPanel">
-            <Slider max={ankleMax} min={ankleMin} bindVal={pants.ankle} step={2} label={"Ankle"}/>
+            <Slider max={ankleMax} min={ankleMin} bind:bindVal={pants.ankle} step={2} label={"Ankle"}/>
         </div>
       </div>
 
