@@ -10,8 +10,8 @@
 </script>
 
 <main>
+    <h2>Color</h2>
     <div class="inputs">
-        <h2>Color</h2>
 
         <div class="styleSelector">
             <button class:active={pants.style==="half"} onclick={() => changeStyle("half")}>
@@ -51,8 +51,9 @@
 <style> 
     main {
         display: flex;
-        gap: 1rem;
+        flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .inputs {
@@ -134,6 +135,8 @@
         display:flex;
         flex-direction: row;
         align-items: center;
+        width: 100%;
+        justify-content: space-between;
     }
 
     .colorText{

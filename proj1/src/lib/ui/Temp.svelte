@@ -15,7 +15,11 @@
             current_temp--
         }
     }
-    setInterval(update_state, 5000);
+
+    $effect(() => {
+        const id = setInterval(update_state, 5000);
+        return () => clearInterval(id)
+    })
 </script>
 
 <main>

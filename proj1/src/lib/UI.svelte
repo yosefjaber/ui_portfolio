@@ -30,13 +30,18 @@
   </div>
 </main>
 
-<style> 
+<style>
+  main {
+    margin-top: 2rem;
+  }
+
   .customization {
     display: flex;
   }
 
   .row-holder {
     display: block;
+    margin-left: 1rem;
   }
 
   #pants {
@@ -48,5 +53,10 @@
     align-items: center;
     margin: 10rem;
     margin-left: 20rem;
+    margin: 0 0 0 20rem;
+  }
+
+  .bottom-row {
+    align-items: baseline;
   }
 </style>

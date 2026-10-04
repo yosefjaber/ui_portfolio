@@ -56,6 +56,31 @@
     --text-on-light: var(--onyx);
     --accent: var(--ash);
     --line: var(--granite);
+
+    --text-body: 24px;
+    --text-heading: 30px;
+    --text-button: 18px;
+    --text-small: 14px;
+    --text-subheading: 18px;
+  }
+
+
+  :global(body) {
+    font-size: var(--text-body);
+  }
+
+  :global(h2) {
+    font-size: var(--text-heading);
+    color: var(--granite);
+  }
+
+  :global(h3) {
+    font-size: 24px;;
+    color: var(--steel);
+  }
+
+  :global(button) {
+    font-size: var(--text-button);
   }
 
   :global(*) {
