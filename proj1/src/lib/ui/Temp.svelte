@@ -4,8 +4,8 @@
     let current_temp = $state(pants.temp)
     let target_temp = $state(72)
 
-    let heating = $derived(current_temp > target_temp)
-    let cooling = $derived(current_temp < target_temp)
+    let heating = $derived(current_temp < target_temp)
+    let cooling = $derived(current_temp > target_temp)
 
     function update_state() {
         if (current_temp < target_temp) {
@@ -21,27 +21,47 @@
 <main>
     <h2>Target Skin Temperature</h2>
 
-    <div class="readout">
+    <div class="readout margin">
         <span class="label">Current</span>
         <span class="temp">{current_temp}℉</span>
     </div>
 
-    <div class="target-holder">
-
-    <span>Target: </span>
-    <button onclick={() => target_temp++}>+</button>
-    <span>{target_temp}℉</span>
+    <div class="target-holder margin">
     <button onclick={() => target_temp--}>-</button>
-
+    <span class="target-value">{target_temp}℉</span>
+    <button onclick={() => target_temp++}>+</button>
     </div>
 
-    <p class="status" class:heating class:cooling>
+    <p class="status margin" class:heating class:cooling>
         {heating ? "Heating" : cooling ? "Cooling" : "At target"}
     </p>
 
 </main>
 
 <style> 
+
+    .margin {
+        margin: 1rem;
+    }
+
+    h2 {
+        font-size: 26px;
+        margin-bottom: 2rem;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    span {
+        font-size: 22px;
+    }
+
+    .target-value {
+        min-width: 4ch;
+        text-align: center;
+    }
+
     .target-holder {
         display:flex;
         align-items: center;
@@ -60,7 +80,7 @@
 
     button:hover {
         border-color: var(--accent);
-        filter: brightness(1.5);
+        filter: brightness(1.25);
     }
 
     button:active {
@@ -71,11 +91,12 @@
     .readout {
         text-align: center;
         color: var(--granite, #2d3748);
+        margin-top: 3rem;
     }
 
     h2 {
         color: var(--steel);
-        margin-top: 0;
+        margin-top: 2rem;
     }
 
     button {
@@ -95,6 +116,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
         margin: 2rem;
         margin-top: 1rem;
     }

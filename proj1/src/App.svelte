@@ -17,6 +17,7 @@
     ankle: 5,
     steps: 0,
     temp: 72,
+    bike: false,
   })
 
   function takeStep() {

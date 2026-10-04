@@ -4,6 +4,7 @@
   import Size from "./ui/Size.svelte"
   import Pants from "./ui/Pants.svelte"
   import Temp from "./ui/Temp.svelte"
+  import Bike from "./ui/Bike.svelte"
 
   let { pants = $bindable() } = $props()
 </script>
@@ -12,12 +13,19 @@
   <!-- <StepCounter steps={pants.steps}/> -->
   <div class = "row-holder">
     <div class="customization top-row">
-      <Color pants={pants} />
+      <div id="pants">
+        <Color pants={pants} />
+      </div>
       <Pants pants={pants} />
       <Size pants={pants} />
     </div>
     <div class = "customization bottom-row">
-      <Temp pants={pants} />
+      <div id="pants">
+        <Temp pants={pants} />
+      </div>
+      <div id="bike">
+          <Bike pants={pants}/>
+      </div>
     </div>
   </div>
 </main>
@@ -29,5 +37,16 @@
 
   .row-holder {
     display: block;
+  }
+
+  #pants {
+    margin-left: 1rem;
+  }
+
+  #bike {
+    display: flex;
+    align-items: center;
+    margin: 10rem;
+    margin-left: 20rem;
   }
 </style>
