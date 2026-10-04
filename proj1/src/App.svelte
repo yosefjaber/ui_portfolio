@@ -16,6 +16,7 @@
     lowerLegLength: 20,
     ankle: 5,
     steps: 0,
+    temp: 72,
   })
 
   function takeStep() {
@@ -34,6 +35,28 @@
 </div>
 
 <style>
+  :global(:root) {
+    --onyx: #090C08;
+    --grape: #474056;
+    --granite: #757083;
+    --steel: #8a95a5;
+    --ash: #b9c6ae;
+
+    --graphite: #333333;
+    --turquoise: #48E5C2;
+    --snow: #FCFAF9;
+    --sand: #F3D3BD;
+    --charcoal: #5E5E5E;
+
+    --bg: var(--onyx);
+    --surface: var(--grape);
+    --stage: var(--steel);
+    --text: var(--ash);
+    --text-on-light: var(--onyx);
+    --accent: var(--ash);
+    --line: var(--granite);
+  }
+
   :global(*) {
     margin: 0;
     padding: 0;
@@ -48,12 +71,14 @@
   .ui-region {
     flex: 0 0 80%;
     overflow: auto;
-    background-color: blue;
+    background-color: var(--bg);
+    color: var(--text);
   }
 
   .test-region {
     flex: 0 0 20%;
     overflow: auto;
-    background-color: red;
+    background-color: var(--surface);
+    color: var(--text);
   }
 </style>

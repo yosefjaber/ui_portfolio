@@ -25,9 +25,11 @@
     const ankleMin = 5
     const ankleMax = 11
 
-    const crotchY = 125
-    const apexY = 100
+    const crotchY = 140
+    const apexY = 120
     const gap = 40
+
+    const crotchUpperLegDiff = 80
 
     let waistT = $derived((pants.waist - waistMin) / (waistMax - waistMin))
     let waistHalf = $derived(120 + waistT * 70)
@@ -35,23 +37,23 @@
     let waistRight = $derived(250 + waistHalf)
 
     let upperLegWidthT = $derived((pants.upperLegWidth - upperLegWidthMin) / (upperLegWidthMax - upperLegWidthMin))
-    let thighHalf = $derived(gap + 90 + upperLegWidthT * 60)
+    let thighHalf = $derived(gap + 90 + upperLegWidthT * 70)
     let thighLeft = $derived(250 - thighHalf)
     let thighRight = $derived(250 + thighHalf)
 
     let upperLegLengthT = $derived((pants.upperLegLength - upperLegLengthMin) / (upperLegLengthMax - upperLegLengthMin))
-    let kneeY = $derived(crotchY + 200 + upperLegLengthT * 100)
+    let kneeY = $derived(crotchY + 175 + upperLegLengthT * 300)
 
     let lowerLegWidthT = $derived((pants.lowerLegWidth - lowerLegWidthMin) / (lowerLegWidthMax - lowerLegWidthMin))
-    let kneeHalf = $derived(gap + 60 + lowerLegWidthT * 50)
+    let kneeHalf = $derived(gap + 80 + lowerLegWidthT * 70)
     let kneeLeft = $derived(250 - kneeHalf)
     let kneeRight = $derived(250 + kneeHalf)
 
     let lowerLegLengthT = $derived((pants.lowerLegLength - lowerLegLengthMin) / (lowerLegLengthMax - lowerLegLengthMin))
-    let ankleY = $derived(kneeY + 190 + lowerLegLengthT * 90)
+    let ankleY = $derived(kneeY + 150 + lowerLegLengthT * 250)
 
     let ankleT = $derived((pants.ankle - ankleMin) / (ankleMax - ankleMin))
-    let ankleHalf = $derived(gap + 45 + ankleT * 50)
+    let ankleHalf = $derived(gap + 60 + ankleT * 80)
     let ankleLeft = $derived(250 - ankleHalf)
     let ankleRight = $derived(250 + ankleHalf)
 
@@ -61,7 +63,7 @@
 
 <main>
     <div class="preview">
-        <svg viewBox="0 0 500 1000" width="100%">
+        <svg viewBox="0 0 500 1050" width="100%">
 
             <defs>
                 <linearGradient id="half">
@@ -87,14 +89,14 @@
             </defs>
                 <polygon
                 points="{waistLeft},20 {waistRight},20
-                        {thighRight},{crotchY} {kneeRight},{kneeY} {ankleRight},{ankleY}
+                        {thighRight},{crotchY + crotchUpperLegDiff} {kneeRight},{kneeY} {ankleRight},{ankleY}
                         {innerRight},{ankleY} {innerRight},{crotchY}
                         250,{apexY}
                         {innerLeft},{crotchY} {innerLeft},{ankleY}
-                        {ankleLeft},{ankleY} {kneeLeft},{kneeY} {thighLeft},{crotchY}"
+                        {ankleLeft},{ankleY} {kneeLeft},{kneeY} {thighLeft},{crotchY + crotchUpperLegDiff}"
                 {fill}
-                stroke="black"
-                stroke-width="15"
+                stroke="#b9c6ae"
+                stroke-width="10"
                 stroke-linejoin="round"
                 ></polygon>
         </svg>
@@ -115,5 +117,10 @@
 
     svg {
         padding: .5rem;
+    }
+
+    .preview {
+        /* background: var(--stage); */
+        border-radius: 1rem;
     }
 </style>

@@ -35,16 +35,15 @@
             </button>
         </div>
 
-
-        <div class="colorInput">
-            <p class="colorText">Primary Color: </p>
+        <label class="colorInput">
+            <span class="colorText">Primary Color:</span>
             <input type="color" bind:value={pants.primaryColor} />
-        </div>
+        </label>
 
-        <div class="colorInput">
-            <p class="colorText">Secondary Color: </p>
+        <label class="colorInput">
+            <span class="colorText">Secondary Color:</span>
             <input type="color" bind:value={pants.secondaryColor} />
-        </div>
+        </label>
 
     </div>
 </main>
@@ -60,6 +59,44 @@
         display: flex;
         flex-direction: column;
         gap: .5rem;
+        margin: 1rem;
+        align-items: center;
+    }
+
+    input[type="color"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 3rem;
+        height: 2rem;
+        margin: 1rem;
+        padding: 0;
+        background: none;
+        border: 2px solid var(--text);
+        border-radius: .4rem;
+        cursor: pointer;
+    }
+
+    input[type="color"]::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+
+    input[type="color"]::-webkit-color-swatch {
+        border: none;
+        border-radius: .3rem;
+    }
+
+    input[type="color"]::-moz-color-swatch {
+        border: none;
+        border-radius: .3rem;
+    }
+
+    input[type="color"]:hover {
+        border-color: var(--accent);
+    }
+
+    input[type="color"]:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
     }
 
     .styleSelector {
@@ -70,12 +107,16 @@
     button {
         padding: .5rem;
         margin: .5rem;
-        margin-top: .5rem;
-        background-color: white;
+        background-color: var(--surface);
+        color: var(--text); 
+        border: 1px solid var(--line);
+        border-radius: .4rem;
+        cursor: pointer;
     }
 
     button:hover {
-        background: #A9A9A9;
+        border-color: var(--accent);
+        filter: brightness(1.15);
     }
 
     button:active {
@@ -83,12 +124,10 @@
     }
 
     button.active {
-        background-color: #808080;
-    }
-
-    input {
-        margin: 1rem;
-        align-items: center;
+        background-color: var(--accent);
+        color: var(--text-on-light); 
+        border-color: var(--accent);
+        font-weight: 600;
     }
 
     .colorInput {
@@ -98,7 +137,7 @@
     }
 
     .colorText{
-        color: white;
+        color: var(--text);
     }
     
 </style>

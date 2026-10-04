@@ -37,10 +37,7 @@
     font-weight: 600;
   }
 
-  input[type="range"] {
-    width: 100%;
-    accent-color: white;
-  }
+  input[type="range"] { accent-color: var(--accent); } 
 
   .labels {
     display: flex;

@@ -35,7 +35,7 @@
         </div>
 
         <div class = "controlPanel">
-            <Slider max={upperLegWidthMax} min={upperLegWidthMin} bind:bindVal={pants.upperLegWidth} step={2} label={"Upper Leg Width"}/>
+            <Slider max={upperLegWidthMax} min={upperLegWidthMin} bind:bindVal={pants.upperLegWidth} step={1} label={"Upper Leg Width"}/>
         </div>
       </div>
 
@@ -72,13 +72,10 @@
 
   main {
     margin-left: 3rem;
+    color: var(--text); 
   }
 
   .controlPanel {
     padding: 0.5rem;  
-  }
-
-  main {
-    color: white
   }
 </style>

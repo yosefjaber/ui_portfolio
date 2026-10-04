@@ -1,0 +1,136 @@
+<script>
+    let { pants = $bindable() } = $props()
+
+    let current_temp = $state(pants.temp)
+    let target_temp = $state(72)
+
+    let heating = $derived(current_temp > target_temp)
+    let cooling = $derived(current_temp < target_temp)
+
+    function update_state() {
+        if (current_temp < target_temp) {
+            current_temp++
+        }
+        else if (current_temp > target_temp) {
+            current_temp--
+        }
+    }
+    setInterval(update_state, 5000);
+</script>
+
+<main>
+    <h2>Target Skin Temperature</h2>
+
+    <div class="readout">
+        <span class="label">Current</span>
+        <span class="temp">{current_temp}℉</span>
+    </div>
+
+    <div class="target-holder">
+
+    <span>Target: </span>
+    <button onclick={() => target_temp++}>+</button>
+    <span>{target_temp}℉</span>
+    <button onclick={() => target_temp--}>-</button>
+
+    </div>
+
+    <p class="status" class:heating class:cooling>
+        {heating ? "Heating" : cooling ? "Cooling" : "At target"}
+    </p>
+
+</main>
+
+<style> 
+    .target-holder {
+        display:flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    button {
+        padding: .5rem;
+        margin: .5rem;
+        background-color: var(--surface);
+        color: var(--text); 
+        border: 1px solid var(--line);
+        border-radius: .4rem;
+        cursor: pointer;
+    }
+
+    button:hover {
+        border-color: var(--accent);
+        filter: brightness(1.5);
+    }
+
+    button:active {
+        transform: scale(0.90);
+        background-color: var(--granite);
+    }
+
+    .readout {
+        text-align: center;
+        color: var(--granite, #2d3748);
+    }
+
+    h2 {
+        color: var(--steel);
+        margin-top: 0;
+    }
+
+    button {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .heating { color: var(--ash); }
+    .cooling { color: var(--granite); }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem;
+        margin-top: 1rem;
+    }
+
+    .status {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+        font-weight: 600;
+        color: var(--ash);
+    }
+
+    .status::before {
+        content: "";
+        width: 0.6rem;
+        height: 0.6rem;
+        border-radius: 50%;
+        background: currentColor;
+    }
+
+    .heating { color: #e5673b; }
+    .cooling { color: #3b8fe5; }
+
+    .heating::before,
+    .cooling::before {
+    animation: pulse 1.5s ease-out infinite;
+    }
+
+    @keyframes pulse {
+        0%   { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 60%, transparent); }
+        100% { box-shadow: 0 0 0 0.6rem transparent; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .heating::before,
+        .cooling::before { animation: none; }
+    }
+</style>
