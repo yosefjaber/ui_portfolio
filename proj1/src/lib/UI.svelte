@@ -63,7 +63,7 @@
     align-items: center;
     margin: 10rem;
     margin-left: 20rem;
-    margin: 0 0 0 20rem;
+    margin: 0 0 0 30rem;
   }
 
   .bottom-row {
