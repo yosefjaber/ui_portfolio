@@ -22,18 +22,18 @@
     {#key slot}
       <div class = "row-holder">
         <div class="customization top-row">
-          <div id="pants">
+          <div class="pants-col">
             <Color bind:pants />
           </div>
           <Pants bind:pants />
           <Size bind:pants />
         </div>
-        <div class = "customization bottom-row">
-          <div id="pants">
+        <div class="customization bottom-row">
+          <div class="pants-col">
             <Temp bind:pants />
           </div>
           <div id="bike">
-              <Bike bind:pants/>
+            <Bike bind:pants />
           </div>
         </div>
       </div>
@@ -44,14 +44,20 @@
 <style>
 
   .customization {
-    display: flex;
+    display: contents;
   }
 
   .row-holder {
-    display: block;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2rem;
+    align-items: start;
     margin-left: 1rem;
     margin-top: 2rem;
-    
+  }
+
+  .pants-col {
+    margin-left: 1rem;
   }
 
   #pants {
@@ -59,11 +65,11 @@
   }
 
   #bike {
+    grid-column: 3;
+    justify-self: center;
+    margin-left: 3rem;
     display: flex;
     align-items: center;
-    margin: 10rem;
-    margin-left: 20rem;
-    margin: 0 0 0 30rem;
   }
 
   .bottom-row {

@@ -106,13 +106,13 @@
     }
 
     button {
-        padding: .5rem;
-        margin: .5rem;
+        margin: 0.5rem;
         background-color: var(--surface);
         color: var(--text); 
         border: 1px solid var(--line);
-        border-radius: .4rem;
+        border-radius: 0.4rem;
         cursor: pointer;
+        padding: .5rem 3.5rem;
     }
 
     button:hover {

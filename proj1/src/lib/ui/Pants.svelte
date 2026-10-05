@@ -3,6 +3,9 @@
 
     let fill = $derived(pants.style === "primary" ? pants.primaryColor : `url(#${pants.style})`)
 
+    /**
+     * @param {string} newStyle
+     */
     function changeStyle(newStyle) {
         pants.style = newStyle
     }
@@ -108,8 +111,8 @@
         display: flex;
         gap: 1rem;
         align-items: center;
-        margin-left: 6rem;
-        margin-right: 4rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .preview {
@@ -122,7 +125,6 @@
     }
 
     .preview {
-        /* background: var(--stage); */
         border-radius: 1rem;
     }
 </style>

@@ -49,7 +49,7 @@
     }
 
     h2 {
-        margin-top: 2rem;
+        margin-top: 0rem;
         margin-bottom: 2rem;
     }
 
@@ -108,8 +108,13 @@
         box-sizing: border-box;
     }
 
-    .heating { color: var(--ash); }
-    .cooling { color: var(--granite); }
+    .heating { 
+        color: var(--ash); 
+    }
+
+    .cooling { 
+        color: var(--granite); 
+    }
 
     main {
         display: flex;
@@ -117,7 +122,7 @@
         align-items: center;
         text-align: center;
         margin: 2rem;
-        margin-top: 1rem;
+        margin-top: 3rem;
     }
 
     .status {
@@ -137,8 +142,13 @@
         background: currentColor;
     }
 
-    .heating { color: #e5673b; }
-    .cooling { color: #3b8fe5; }
+    .heating { 
+        color: #e5673b; 
+    }
+
+    .cooling { 
+        color: #3b8fe5; 
+    }
 
     .heating::before,
     .cooling::before {

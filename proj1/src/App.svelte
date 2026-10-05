@@ -56,6 +56,7 @@
     --charcoal: #5E5E5E;
 
     --bg: var(--onyx);
+    --bg-bright: #0B0F0A;
     --surface: var(--grape);
     --stage: var(--steel);
     --text: var(--ash);
@@ -104,7 +105,7 @@
   .ui-region {
     flex: 0 0 80%;
     overflow: auto;
-    background-color: var(--bg);
+    background-color: var(--bg-bright);
     color: var(--text);
   }
 
