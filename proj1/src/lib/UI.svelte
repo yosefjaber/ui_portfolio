@@ -42,9 +42,6 @@
 </main>
 
 <style>
-  main {
-    
-  }
 
   .customization {
     display: flex;

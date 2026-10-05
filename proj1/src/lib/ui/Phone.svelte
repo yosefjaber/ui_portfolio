@@ -3,15 +3,9 @@
 
   let { pants = $bindable() } = $props()
 
-  // placeholder data until the real pants report it
-  let heart = $state({ bpm: 89, min: 59, max: 180, avg: 60 })
-  let calories = $state({ burned: 500, goal: 800, yesterday: 780 })
-  let stepsGoal = 900
-  let stepsYesterday = 463
-  let sleep = $state([7, 8.5, 5.5, 6.5, 7.5, 0, 0])
   const days = ["M", "T", "W", "Th", "F", "Sa", "S"]
 
-  let zone = $derived("Zone " + Math.min(5, Math.max(1, Math.floor(heart.bpm / 40))))
+  let zone = $derived("Zone " + Math.min(5, Math.max(1, Math.floor(pants.heart.bpm / 40))))
 </script>
 
 <main>
@@ -21,31 +15,29 @@
     <div class="feed">
       <section class="card">
         <h3>Heart Rate</h3>
-        <CircleInfo pct={(heart.bpm - heart.min) / (heart.max - heart.min)} big={heart.bpm} small={zone}/>
-        <div class="range"><span>{heart.min}</span><span>{heart.max}</span></div>
-        <p>Today avg: {heart.avg} bpm</p>
+        <CircleInfo pct={(pants.heart.bpm - pants.heart.min) / (pants.heart.max - pants.heart.min)} big={pants.heart.bpm} small={zone}/>
+        <div class="range"><span>{pants.heart.min}</span><span>{pants.heart.max}</span></div>
+        <p>Today avg: {pants.heart.avg} bpm</p>
       </section>
 
       <section class="card">
         <h3>Calories</h3>
-        <CircleInfo pct={(calories.burned / calories.goal)} big={calories.burned} small="cals"/>
-        <p>{calories.burned}/{calories.goal} cals</p>
-        <p>Yesterday: {calories.yesterday} cals</p>
+        <CircleInfo pct={(pants.calories.burned / pants.calories.goal)} big={pants.calories.burned} small="cals"/>
+        <p>{pants.calories.burned}/{pants.calories.goal} cals</p>
+        <p>Yesterday: {pants.calories.yesterday} cals</p>
       </section>
 
       <section class="card">
         <h3>Steps</h3>
-         <CircleInfo pct={(pants.steps / stepsGoal)} big={pants.steps} small="steps"/>
-        <p>{pants.steps}/{stepsGoal} steps</p>
-        <p>Yesterday: {stepsYesterday} steps</p>
+         <CircleInfo pct={(pants.steps / pants.stepsGoal)} big={pants.steps} small="steps"/>
+        <p>{pants.steps}/{pants.stepsGoal} steps</p>
+        <p>Yesterday: {pants.stepsYesterday} steps</p>
       </section>
-
-      <!-- more cards go here -->
 
       <section class="card">
         <h3>Sleep</h3>
         <div class="chart">
-          {#each sleep as hours}
+          {#each pants.sleep as hours}
             <div class="slot"><div class="bar" style:height="{hours * 10}%"></div></div>
           {/each}
         </div>

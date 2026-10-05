@@ -3,8 +3,6 @@
   import UI from './lib/UI.svelte'
   import Test from './lib/Test.svelte'
 
-  let steps = $state(0)
-
   let _pant = {
     style: "primary",
     primaryColor: "black",
@@ -18,6 +16,11 @@
     steps: 0,
     temp: 72,
     bike: false,
+    heart: { bpm: 89, min: 59, max: 180, avg: 60 },
+    calories: { burned: 500, goal: 800, yesterday: 780 },
+    stepsGoal: 900,
+    stepsYesterday: 463,
+    sleep: [7, 10, 5.5, 6.5, 7.5, 0, 0]
   }
 
   let slot = $state(0)
@@ -39,7 +42,7 @@
     <UI {pants} bind:slot bind:phoneUI/>
   </div>
   <div class="test-region">
-    <Test {takeStep} bind:phoneUI/>
+    <Test bind:phoneUI {pants}/>
   </div>
 </div>
 
