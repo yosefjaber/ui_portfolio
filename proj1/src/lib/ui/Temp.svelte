@@ -49,7 +49,7 @@
     }
 
     h2 {
-        font-size: 26px;
+        margin-top: 2rem;
         margin-bottom: 2rem;
     }
 
@@ -96,11 +96,6 @@
         text-align: center;
         color: var(--granite, #2d3748);
         margin-top: 3rem;
-    }
-
-    h2 {
-        color: var(--steel);
-        margin-top: 2rem;
     }
 
     button {

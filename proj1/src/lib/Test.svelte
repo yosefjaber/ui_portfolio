@@ -24,7 +24,7 @@
   }
 
   function takeStep() {
-    pants.step++
+    pants.steps++
     pants.calories.burned++
   }
 
@@ -42,7 +42,11 @@
     <button onclick={() => { if (pants.heart.bpm > pants.heart.min) pants.heart.bpm-- }}>
       Heart Rate Decrease
     </button>
-    <div id="next-day-div">
+    <div class="test-sliders">
+      <Slider max={2_000} min={0} bind:bindVal={pants.calories.goal} step={10} unit={" cal"} label="Calories Goal" />
+      <Slider max={5_000} min={0} bind:bindVal={pants.stepsGoal} step={100} unit={" steps"} label="Steps Goal" />
+    </div>
+    <div class="test-sliders next-day">
       <Slider max={10} min={0} bind:bindVal={nextDaySleep} step={0.1} unit={" hrs"} label="Sleep" />
       <button onclick={() => {goNextDay()}}>
         Go to Next Day
@@ -59,32 +63,35 @@
     align-items: center;
     justify-content: center;
   }
-  
 
-  #next-day-div :global(.slider) {
+  .test-sliders :global(.slider) {
     width: 8rem;
   }
 
-  #next-day-div :global(input[type="range"]) {
+  .test-sliders :global(input[type="range"]) {
     accent-color: var(--onyx);
   }
 
-  #next-day-div {
+  .test-sliders {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
     margin-top: 2rem;
     color: var(--onyx);
   }
 
-  #next-day-div :global(h3) {
+  .test-sliders :global(h3) {
     color: var(--onyx);
   } 
 
-  #next-day-div {
+  .test-sliders {
     margin-top: 2rem;
   }
 
+  .next-day {
+    margin-top: 5rem;
+  }
 
   #button-div {
     display: flex;

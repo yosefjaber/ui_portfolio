@@ -77,7 +77,6 @@
     }
 
     h2 {
-        color: var(--steel);
         margin-bottom: 6rem;
     }
 

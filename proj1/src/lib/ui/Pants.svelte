@@ -108,6 +108,8 @@
         display: flex;
         gap: 1rem;
         align-items: center;
+        margin-left: 6rem;
+        margin-right: 4rem;
     }
 
     .preview {

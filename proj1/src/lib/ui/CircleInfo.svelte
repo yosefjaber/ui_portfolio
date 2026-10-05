@@ -1,5 +1,9 @@
 <script>
     let { pct, big, small } = $props()
+
+    let safePct = $derived(
+        Number.isNaN(pct) ? 0 : Math.max(0, Math.min(pct, 1))
+    )
 </script>
 
 <main>
@@ -7,7 +11,7 @@
     <svg viewBox="0 0 100 100">
       <circle class="track" cx="50" cy="50" r="42" pathLength="100" />
       <circle class="fill" cx="50" cy="50" r="42" pathLength="100"
-        stroke-dasharray="{75 * Math.min(pct, 1)} 100" />
+        stroke-dasharray="{75 * safePct} 100" />
     </svg>
     <div class="ring-text">
       <strong>{big}</strong>

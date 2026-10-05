@@ -70,12 +70,14 @@
     margin-left: 1rem;
   }
 
-  main {
-    margin-left: 3rem;
-    color: var(--text); 
-  }
-
   .controlPanel {
     padding: 0.5rem;  
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3rem;
   }
 </style>

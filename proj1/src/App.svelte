@@ -16,12 +16,12 @@
     steps: 0,
     temp: 72,
     bike: false,
-    heart: { bpm: 89, min: 59, max: 180, avg: 60 },
+    heart: { bpm: 89, min: 50, max: 220, avg: 60 },
     calories: { burned: 500, goal: 800, yesterday: 780 },
     stepsGoal: 900,
     stepsYesterday: 463,
     sleep: [7, 10, 5.5, 6.5, 7.5, 0, 0],
-    day: 5
+    day: 4
   }
 
   let slot = $state(0)
@@ -78,6 +78,7 @@
   :global(h2) {
     font-size: var(--text-heading);
     color: var(--granite);
+    filter: brightness(1.1);
   }
 
   :global(h3) {
