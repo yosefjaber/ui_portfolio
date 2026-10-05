@@ -5,7 +5,7 @@
 
   let steps = $state(0)
 
-  let pants = $state({
+  let _pant = {
     style: "primary",
     primaryColor: "black",
     secondaryColor: "white",
@@ -18,20 +18,28 @@
     steps: 0,
     temp: 72,
     bike: false,
-  })
+  }
+
+  let slot = $state(0)
+
+  let pantsArray = $state([structuredClone(_pant), structuredClone(_pant), structuredClone(_pant)])
+
+  let pants = $derived(pantsArray[slot])
 
   function takeStep() {
     pants.steps += 1
   }
 
+  let phoneUI = $state(false)
+
 </script>
 
 <div class="app-container">
   <div class="ui-region">
-    <UI {pants}/>
+    <UI {pants} bind:slot bind:phoneUI/>
   </div>
   <div class="test-region">
-    <Test {takeStep}/>
+    <Test {takeStep} bind:phoneUI/>
   </div>
 </div>
 
@@ -104,7 +112,7 @@
   .test-region {
     flex: 0 0 20%;
     overflow: auto;
-    background-color: var(--surface);
+    background-color: var(--ash);
     color: var(--text);
   }
 </style>

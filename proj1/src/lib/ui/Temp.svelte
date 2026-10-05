@@ -4,15 +4,15 @@
     let current_temp = $state(pants.temp)
     let target_temp = $state(72)
 
-    let heating = $derived(current_temp < target_temp)
-    let cooling = $derived(current_temp > target_temp)
+    let heating = $derived(pants.temp < target_temp)
+    let cooling = $derived(pants.temp > target_temp)
 
     function update_state() {
-        if (current_temp < target_temp) {
-            current_temp++
+        if (pants.temp < target_temp){
+            pants.temp++
         }
-        else if (current_temp > target_temp) {
-            current_temp--
+        else if (pants.temp > target_temp) {
+            pants.temp--
         }
     }
 
@@ -27,7 +27,7 @@
 
     <div class="readout margin">
         <span class="label">Current</span>
-        <span class="temp">{current_temp}℉</span>
+        <span class="temp">{pants.temp}℉</span>
     </div>
 
     <div class="target-holder margin">

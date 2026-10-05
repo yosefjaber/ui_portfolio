@@ -1,29 +1,27 @@
 <script>
     let { pants = $bindable() } = $props()
 
-    let inflating = $state(false)
+    let inflating = $state(pants.bike)
 
-    let inflatedpct = $state(0)
+    let inflatedpct = $state(pants.bike ? 100 : 0)
 
-    let status = $state("")
+    let status = $derived(
+        inflatedpct === 100 ? "Inflated"
+        : inflating ? "Inflating: "
+        : inflatedpct > 0 ? "Deflating: "
+        : "Deflated"
+    )
 
+    
     function update_state() {
-        if (inflating && inflatedpct < 100) {
-            status = "Inflating: "
-            inflatedpct++
-        }
-        else if (!inflating && inflatedpct > 0) {
-            status = "Deflating: "
-            inflatedpct--
-        }
-        else if(inflatedpct == 100) {
-            status = "Inflated"
-            pants.bike = true
-        }
-        else {
-            status = "Deflated"
-            pants.bike = false
-        }
+    if (inflating && inflatedpct < 100){
+        inflatedpct++
+    }
+    else if (!inflating && inflatedpct > 0) {
+        inflatedpct--
+    }
+    
+    pants.bike = inflatedpct === 100
     }
 
     $effect(() => {

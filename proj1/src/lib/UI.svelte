@@ -5,34 +5,45 @@
   import Pants from "./ui/Pants.svelte"
   import Temp from "./ui/Temp.svelte"
   import Bike from "./ui/Bike.svelte"
+  import Navbar from "./ui/Navbar.svelte";
+  import Phone from "./ui/Phone.svelte";
 
-  let { pants = $bindable() } = $props()
+  let { pants = $bindable(), slot = $bindable(), phoneUI = $bindable()} = $props()
 </script>
 
 <main>
   <!-- <StepCounter steps={pants.steps}/> -->
-  <div class = "row-holder">
-    <div class="customization top-row">
-      <div id="pants">
-        <Color pants={pants} />
-      </div>
-      <Pants pants={pants} />
-      <Size pants={pants} />
+  {#if phoneUI}
+    <Phone {pants}/>
+  {:else}
+    <div>
+      <Navbar {pants} bind:slot/>
     </div>
-    <div class = "customization bottom-row">
-      <div id="pants">
-        <Temp pants={pants} />
+    {#key slot}
+      <div class = "row-holder">
+        <div class="customization top-row">
+          <div id="pants">
+            <Color pants={pants} />
+          </div>
+          <Pants pants={pants} />
+          <Size pants={pants} />
+        </div>
+        <div class = "customization bottom-row">
+          <div id="pants">
+            <Temp pants={pants} />
+          </div>
+          <div id="bike">
+              <Bike pants={pants}/>
+          </div>
+        </div>
       </div>
-      <div id="bike">
-          <Bike pants={pants}/>
-      </div>
-    </div>
-  </div>
+    {/key}
+  {/if}
 </main>
 
 <style>
   main {
-    margin-top: 2rem;
+    
   }
 
   .customization {
@@ -42,6 +53,8 @@
   .row-holder {
     display: block;
     margin-left: 1rem;
+    margin-top: 2rem;
+    
   }
 
   #pants {
