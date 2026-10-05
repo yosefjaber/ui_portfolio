@@ -6,11 +6,13 @@
   const days = ["M", "T", "W", "Th", "F", "Sa", "S"]
 
   let zone = $derived("Zone " + Math.min(5, Math.max(1, Math.floor(pants.heart.bpm / 40))))
+
+  let day = $derived(days[pants.day])
 </script>
 
 <main>
   <div class="phone">
-    <header><h2>Pulse Pants</h2></header>
+    <header><h2>Pulse Pants</h2><h2>{day}</h2></header>
 
     <div class="feed">
       <section class="card">
@@ -68,7 +70,12 @@
     }
 
     header { 
-        padding: 1rem; text-align: center; background: var(--surface); 
+        padding: 1rem; 
+        text-align: center; 
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .feed {

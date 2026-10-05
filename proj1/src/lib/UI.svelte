@@ -14,26 +14,26 @@
 <main>
   <!-- <StepCounter steps={pants.steps}/> -->
   {#if phoneUI}
-    <Phone {pants}/>
+    <Phone bind:pants/>
   {:else}
     <div>
-      <Navbar {pants} bind:slot/>
+      <Navbar bind:pants bind:slot/>
     </div>
     {#key slot}
       <div class = "row-holder">
         <div class="customization top-row">
           <div id="pants">
-            <Color pants={pants} />
+            <Color bind:pants />
           </div>
-          <Pants pants={pants} />
-          <Size pants={pants} />
+          <Pants bind:pants />
+          <Size bind:pants />
         </div>
         <div class = "customization bottom-row">
           <div id="pants">
-            <Temp pants={pants} />
+            <Temp bind:pants />
           </div>
           <div id="bike">
-              <Bike pants={pants}/>
+              <Bike bind:pants/>
           </div>
         </div>
       </div>

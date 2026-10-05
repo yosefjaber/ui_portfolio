@@ -20,18 +20,13 @@
     calories: { burned: 500, goal: 800, yesterday: 780 },
     stepsGoal: 900,
     stepsYesterday: 463,
-    sleep: [7, 10, 5.5, 6.5, 7.5, 0, 0]
+    sleep: [7, 10, 5.5, 6.5, 7.5, 0, 0],
+    day: 5
   }
 
   let slot = $state(0)
 
   let pantsArray = $state([structuredClone(_pant), structuredClone(_pant), structuredClone(_pant)])
-
-  let pants = $derived(pantsArray[slot])
-
-  function takeStep() {
-    pants.steps += 1
-  }
 
   let phoneUI = $state(false)
 
@@ -39,10 +34,10 @@
 
 <div class="app-container">
   <div class="ui-region">
-    <UI {pants} bind:slot bind:phoneUI/>
+    <UI bind:pants={pantsArray[slot]} bind:slot bind:phoneUI />
   </div>
   <div class="test-region">
-    <Test bind:phoneUI {pants}/>
+    <Test bind:pants={pantsArray[slot]} bind:phoneUI />
   </div>
 </div>
 

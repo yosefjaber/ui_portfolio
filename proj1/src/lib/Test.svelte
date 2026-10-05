@@ -6,12 +6,34 @@
 
   let nextDaySleep = $state(0)
 
+  function goNextDay() {
+    pants.calories.yesterday = pants.calories.burned
+    pants.calories.burned = 0
+    pants.stepsYesterday = pants.steps
+    pants.steps = 0
+
+    if (pants.day < 6) {
+      pants.day++
+      pants.sleep[pants.day] = nextDaySleep
+    } else {
+      pants.day = 0
+      pants.sleep = [nextDaySleep, 0, 0, 0, 0, 0, 0]
+    }
+
+    console.log(pants.day)
+  }
+
+  function takeStep() {
+    pants.step++
+    pants.calories.burned++
+  }
+
 </script>
 
 <main>
   <div id="button-div">
     <button onclick = {() => (phoneUI = !phoneUI)}>{phoneUI ? "Switch to Pants UI" : "Switch to Phone UI"}</button>
-    <button class="button" onclick={() => pants.steps++}>
+    <button class="button" onclick={() => takeStep()}>
       Take a step
     </button>
     <button onclick = {() => pants.heart.bpm++}>
@@ -21,10 +43,10 @@
       Heart Rate Decrease
     </button>
     <div id="next-day-div">
-      <button onclick={() => { }}>
+      <Slider max={10} min={0} bind:bindVal={nextDaySleep} step={0.1} unit={" hrs"} label="Sleep" />
+      <button onclick={() => {goNextDay()}}>
         Go to Next Day
       </button>
-      <Slider max={10} min={0} bind:bindVal={nextDaySleep} step={0.1} unit={" hrs"} label="Sleep" />
     </div>
   </div>
 </main>
@@ -48,6 +70,9 @@
   }
 
   #next-day-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
     color: var(--onyx);
   }
