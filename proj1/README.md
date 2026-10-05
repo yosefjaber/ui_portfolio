@@ -1,5 +1,7 @@
 # Smart Pants Design
 
+UI is publically hosted here: https://jaberui.duckdns.org/
+
 ## Affordances
 
 ## User Needs
