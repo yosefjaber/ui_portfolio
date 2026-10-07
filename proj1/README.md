@@ -74,7 +74,7 @@ These are the takeaways I got from the user interviews:
 
 - Most people would prefer a display on the thighs
 - They mainly get new pants because their old ones no longer fit
-- Their should be 4-6 pockets
+- People want 4-6 pockets
 
 ## User Needs
 
@@ -99,6 +99,15 @@ These are the takeaways I got from the user interviews:
 - Posture Check (Later scrapped)
 - Ability to change the size of the pants
 
+## Smart Feature Assumptions
+
+- The pants will be able to detect the temperature of the skin
+- The pants will be able to heat/cool
+- The pants will be able to change colors
+- The pants will be able to adjust the size of itself
+- The pants will be able to inflate
+- The pants will be able to detect sleep
+- The pants will be able to detect heart rate, steps, and calories
 
 ## Sketches
 
@@ -113,6 +122,8 @@ I later had the idea to have one screen on the pants for comfort (Perfect Pants)
 ![alt text](image-3.png)
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+
+Got Feedback that it seemed very boxy and it reminded them of Windows settings.
 
 ## Inspiration
 
