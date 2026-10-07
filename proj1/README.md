@@ -22,7 +22,7 @@ Here are some of the affordances I came up with for my smart pants:
 - The user can press or tap controls on the thigh, even with sweaty or gloved hands.
 - The user can snap out the sensor pod or battery before washing so the pants can be machine washed safely.
 
-### User Interviews
+## User Interviews
 
 I asked the following questions to get a better idea of what people would want from smart pants:
 
