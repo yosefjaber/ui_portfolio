@@ -1,5 +1,7 @@
 # Smart Pants Design
 
+Smart Pants are pants that you can adjust the size of and they can heat/cool your legs and make you feel comfortable on a bike. There is also a phone app that can track your calories, steps, heart rate, and sleep.
+
 UI is publicly hosted here: https://jaberui.duckdns.org/
 
 ## Demo Video/Pictures
@@ -62,7 +64,7 @@ Mosium:
 7. Cargo pants material/cotton
 
 Raphael: 
-1. If there has to be a display the thigh
+1. If there has to be a display, the thigh
 2. Nice comfortable pair of jeans because they are durable and they look good
 3. No, they work
 4. The old ones don't fit anymore
@@ -95,7 +97,7 @@ These are the takeaways I got from the user interviews:
 - Moisture/sweat level sensor (Later scrapped)
 - Embedded heating/cooling elements
 - Calories Burned tracker
-- Sleep Score (Later scrapped)
+- Sleep Score
 - Posture Check (Later scrapped)
 - Ability to change the size of the pants
 
@@ -116,7 +118,7 @@ These were the original sketches:
 ![alt text](image.png)
 ![alt text](image-1.png)
 
-I later had the idea to have one screen on the pants for comfort (Perfect Pants) and and another on your phone for exercise (Pulse Pants):
+I later had the idea to have one screen on the pants for comfort (Perfect Pants) and another on your phone for exercise (Pulse Pants):
 
 ![alt text](image-2.png)
 ![alt text](image-3.png)
